@@ -3,7 +3,7 @@ import random
 movies=["Prestige","Odyssey","Memento","Dark Knight","Dunkirk","Following","Inception","Interstellar"]
 movie=random.choice(movies)
 display=""
-count=0
+
 
 
 
@@ -18,15 +18,15 @@ print(display)
 
 letter_attempts=6
 movie_attempts=2
-new_count=len(movie)
 
 
 
 
 
-while letter_attempts!=0 and movie_attempts!=0 and new_count!=count:
+
+while True:
   new_display=""
-  count=0
+  
   
   
 
@@ -76,7 +76,7 @@ while letter_attempts!=0 and movie_attempts!=0 and new_count!=count:
   
   for i in movie:
      if i==" ":
-        new_display+=" "
+        new_display+="  "
      elif i.lower() in guessed and len(i)==1:
         new_display+=i+" "
         
@@ -85,17 +85,15 @@ while letter_attempts!=0 and movie_attempts!=0 and new_count!=count:
      else:
         new_display+=" _ "
   print(new_display)
+  
 
-  for i in movie.lower():
-     if i in guessed:
-        count+=1
-        
-     if count==len(movie):
-        print("You won!!!")
-        print(f"The movie is={movie}")
-        new_count=count
-        break
-        
+  
+  if all(i.lower() in guessed for i in movie if i!=" "):
+     print("You won!!!")
+     print(f"The movie isd {movie}")
+     break
+     
+     
       
       
      
