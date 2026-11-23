@@ -40,7 +40,7 @@ while letter_attempts!=0 and movie_attempts!=0 and new_count!=count:
      continue
   elif len(guess)==1 and guess in movie.lower():
      guessed.append(guess)
-     print(guessed)
+     
     
 
   if len(guess)>1:
@@ -52,9 +52,10 @@ while letter_attempts!=0 and movie_attempts!=0 and new_count!=count:
         print("You are wrong")
         movie_attempts-=1
         print("Remaining movie attempts=",movie_attempts)
-        print(f"Answer={movie}")
+       
         if movie_attempts==0:
            print("Game over")
+           print(f"Answer={movie}")
            break
            
   elif len(guess)==1:
